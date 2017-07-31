@@ -1,0 +1,61 @@
+/* Main Page Styling */
+
+#main-page {
+  background-image: url("images/collage-background.jpg");
+}
+
+.game-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+.new-game-content {
+  text-align: center;
+  position: absolute;
+  background: #293133;
+  height: 20vh;
+  width: 40vw;
+  margin-top: 40vh;
+  margin-bottom: 40vh;
+  margin-left: 30vw;
+  margin-right: 30vw;
+  color: #FFFFFF;
+  font-family: "Courier New", Courier;
+  padding: 2%;
+}
+
+h1 {
+  font-size: 4vh;
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+nav {
+  font-size: 2.5vh;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+
+}
+
+/* Easy Game Styline */
+
+#easy-game {
+  background-color: #293133;
+}
+
+/* Hard Game Styline */
+
+#hard-game {
+  background-color: #293133;
+}
