@@ -1,4 +1,8 @@
 /* Main Page Styling */
+body {
+  margin: 0;
+}
+
 #main-page {
   background-image: url("images/collage-background.jpg");
   cursor: crosshair;
@@ -78,31 +82,33 @@ h2 {
   width: 100vw;
   background-image: url("images/collage-background.jpg");
   margin: 0;
+  background-size: 90%;
 }
 
 .game-container {
   max-width: 100vw;
-  height: 70vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  width: 80vw;
+  height: 55vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.game-cards {
-  
+  padding-top: 7.5vh;
+  padding-bottom: 7.5vh;
+  margin-left: 9vw;
+  margin-right: 10vw;
 }
 
 .card-pics {
-  width: 150px;
-  height: 150px;
+  width: 14vw;
+  height: 12vh;
   padding: 5px;
+
 }
 .card-pics img {
-  width: 150px;
-  height: 150px;
+  width: 14vw;
+  height: 12vh;
+  border-radius: 15%;
 
 }
 
