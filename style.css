@@ -8,6 +8,15 @@ body {
   cursor: crosshair;
 }
 
+#easy-title {
+  margin: 0;
+  text-align: center;
+  color: #FFFFFF;
+  font-family: "Courier New", Courier;
+  background-color: #293133;
+  font-size: 48px;
+}
+
 .main-container {
   position: absolute;
   top: 0;
@@ -25,10 +34,10 @@ body {
   width: 50vw;
   margin-top: 35vh;
   margin-bottom: 35vh;
-  margin-left: 21.75vw;
+  margin-left: 25vw;
+  margin-right: 25vw;
   color: #FFFFFF;
   font-family: "Courier New", Courier;
-  padding: 2%;
   border-radius: 20%;
   box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.75);
 }
@@ -106,19 +115,23 @@ h2 {
   height: 13vh;
   padding: 2px;
   position: relative;
-  background-color: black;
+  background-image: url("images/keanu.jpg");
+  background-size: 100%;
   margin: 2px;
   border-radius: 15%;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
 }
 
 .card-pics-hidden {
-  visibility: visible;
+  visibility: hidden;
 }
+
 
 .card-pics-shown {
   visibility: visible;
 }
+
+
 
 .card-pics-hidden img {
   width: 14vw;
