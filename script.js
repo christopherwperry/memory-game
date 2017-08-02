@@ -1,7 +1,6 @@
 // Establish array that contains all the images for the "backs" of cards.
 
 let imageArray = [];
-
 imageArray[0] = new Image();
 imageArray[0].src = "images/aliens.jpg";
 imageArray[1] = new Image();
@@ -58,18 +57,35 @@ function shuffle(imageArray) {
 }
 
 let shuffledArray = shuffle(imageArray);
-let createDiv = document.createElement("div");
-let gameCont = document.getElementById("game-container");
+let gameContainer = document.getElementById("game-container");
+let gameBoard = document.getElementById("gameboard");
+let heartWrapper = document.createElement("div");
+heartWrapper.setAttribute("class", "heart-wrapper");
+gameContainer.appendChild(heartWrapper);
+
+function createHearts(){
+  for (let i = 0; i < 8; i++){
+    let heart = document.createElement("div");
+    heart.setAttribute("class", "heart");
+    heartWrapper.appendChild(heart);
+  }
+}
 
 function createCards(){
   for(let i = 0; i < shuffledArray.length; i++){
     let cardCase = document.createElement("div");
     let cardPic = document.createElement("div");
     cardCase.setAttribute("class", "game-cards");
-    cardPic.setAttribute("class", "card-pics");
+    cardPic.setAttribute("class", "card-pics-hidden");
     cardPic.appendChild(shuffledArray[i]);
     cardCase.appendChild(cardPic);
-    gameCont.appendChild(cardCase);
+    gameBoard.appendChild(cardCase);
   }
 }
-gameCont.appendChild(createCards())
+
+function newGame(){
+  createCards();
+  createHearts();
+}
+
+newGame();

@@ -78,17 +78,19 @@ h2 {
 }
 
 .game-header, .game-footer {
-  height: 15vh;
+  height: 12vh;
   width: 100vw;
   background-image: url("images/collage-background.jpg");
   margin: 0;
-  background-size: 90%;
+  background-size: 50%;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+  background-position: center;
 }
 
-.game-container {
+.gameboard {
   max-width: 100vw;
   width: 80vw;
-  height: 55vh;
+  height: 61vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -99,17 +101,29 @@ h2 {
   margin-right: 10vw;
 }
 
-.card-pics {
+.game-cards {
   width: 14vw;
-  height: 12vh;
-  padding: 5px;
-
-}
-.card-pics img {
-  width: 14vw;
-  height: 12vh;
+  height: 13vh;
+  padding: 2px;
+  position: relative;
+  background-color: black;
+  margin: 2px;
   border-radius: 15%;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+}
 
+.card-pics-hidden {
+  visibility: visible;
+}
+
+.card-pics-shown {
+  visibility: visible;
+}
+
+.card-pics-hidden img {
+  width: 14vw;
+  height: 13vh;
+  border-radius: 15%;
 }
 
 /* Easy Game Styline */
