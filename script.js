@@ -74,11 +74,9 @@ function createHearts(){
 function createCards(){
   for(let i = 0; i < shuffledArray.length; i++){
     let cardCase = document.createElement("div");
-    let cardPic = document.createElement("div");
-    cardCase.setAttribute("class", "game-cards");
-    cardPic.setAttribute("class", "card-pics-hidden");
-    cardPic.appendChild(shuffledArray[i]);
-    cardCase.appendChild(cardPic);
+    cardCase.setAttribute("class", "game-cards-hidden");
+    cardCase.addEventListener("click", changeCards, false);
+    cardCase.appendChild(shuffledArray[i]);
     gameBoard.appendChild(cardCase);
   }
 }
@@ -89,3 +87,8 @@ function newGame(){
 }
 
 newGame();
+
+function changeCards() {
+  this.classList.remove("game-cards-hidden");
+  this.classList.add("game-cards-shown");
+}

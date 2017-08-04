@@ -10,10 +10,11 @@ body {
 
 #easy-title {
   margin: 0;
+  margin-top: 2vh;
   text-align: center;
   color: #FFFFFF;
   font-family: "Courier New", Courier;
-  background-color: #293133;
+  background-color: #000000;
   font-size: 48px;
 }
 
@@ -86,6 +87,11 @@ h2 {
   cursor: crosshair;
 }
 
+.game-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .game-header, .game-footer {
   height: 12vh;
   width: 100vw;
@@ -104,36 +110,52 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 7.5vh;
-  padding-bottom: 7.5vh;
+  padding-top: 2vh;
   margin-left: 9vw;
   margin-right: 10vw;
 }
 
-.game-cards {
+.heart-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: center;
+  margin-bottom: 1vh;
+}
+
+.heart {
+  height: 5vh;
+  width: 5vw;
+  background-image: url("images/heart.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.game-cards-hidden, .game-cards-shown {
   width: 14vw;
   height: 13vh;
   padding: 2px;
   position: relative;
-  background-image: url("images/keanu.jpg");
-  background-size: 100%;
+  background-color: #293133;
   margin: 2px;
   border-radius: 15%;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
 }
 
-.card-pics-hidden {
+.game-cards-hidden:hover, .game-cards-shown:hover, .game-cards-hidden img:hover, .game-cards-shown img:hover {
+  width: 16vw;
+  height: 15vh;
+}
+
+.game-cards-hidden img {
   visibility: hidden;
+  width: 14vw;
+  height: 13vh;
+  border-radius: 15%;
 }
 
-
-.card-pics-shown {
+.game-cards-shown img {
   visibility: visible;
-}
-
-
-
-.card-pics-hidden img {
   width: 14vw;
   height: 13vh;
   border-radius: 15%;
@@ -142,7 +164,7 @@ h2 {
 /* Easy Game Styline */
 
 #easy-game {
-  background-color: #293133;
+  background-color: #000000;
 }
 
 /* Hard Game Styline */
