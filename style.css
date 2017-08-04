@@ -142,16 +142,21 @@ h2 {
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
 }
 
-.game-cards-hidden:hover, .game-cards-shown:hover, .game-cards-hidden img:hover, .game-cards-shown img:hover {
-  width: 16vw;
-  height: 15vh;
-}
+/*
+.flip-card {
+  transform: translate(100px) rotate(20deg);
+  transform-origin: 0 -250px;
+}*/
 
 .game-cards-hidden img {
   visibility: hidden;
   width: 14vw;
   height: 13vh;
   border-radius: 15%;
+}
+
+.game-cards-shown {
+  transition: 1s ease-out;
 }
 
 .game-cards-shown img {

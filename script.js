@@ -61,6 +61,7 @@ let gameContainer = document.getElementById("game-container");
 let gameBoard = document.getElementById("gameboard");
 let heartWrapper = document.createElement("div");
 heartWrapper.setAttribute("class", "heart-wrapper");
+heartWrapper.setAttribute("id", "total-lives")
 gameContainer.appendChild(heartWrapper);
 
 function createHearts(){
@@ -81,6 +82,15 @@ function createCards(){
   }
 }
 
+let playerHand = [];
+let playerScore = 0;
+//let lives = document.getElementById("total-lives");
+//let life = document.getElementsByClassName(".heart");
+
+//console.log(lives);
+//console.log(life);
+//console.log(life.length);
+
 function newGame(){
   createCards();
   createHearts();
@@ -88,7 +98,41 @@ function newGame(){
 
 newGame();
 
+function checkLives(){
+  if(life.length > 0){
+    changeCards();
+  } else {
+    alert("GAME OVER");
+  }
+}
+
 function changeCards() {
-  this.classList.remove("game-cards-hidden");
-  this.classList.add("game-cards-shown");
+  if (playerHand.length === 0){
+    this.classList.remove("game-cards-hidden");
+    this.classList.add("game-cards-shown");
+    playerHand.push(this);
+  } else if (playerHand.length === 1){
+    this.classList.remove("game-cards-hidden");
+    this.classList.add("game-cards-shown");
+    playerHand.push(this);
+    setTimeout(clearCards, 500);
+  }
+  console.log(playerHand);
+  console.log(playerScore);
+}
+
+let clearCards = function(){
+  if (playerHand[0].innerHTML === playerHand[1].innerHTML){
+    playerScore +=2;
+    playerHand.pop();
+    playerHand.pop();
+    console.log(playerScore);
+} else {
+  playerHand[0].classList.remove("game-cards-shown");
+  playerHand[0].classList.add("game-cards-hidden");
+  playerHand[1].classList.remove("game-cards-shown");
+  playerHand[1].classList.add("game-cards-hidden");
+  playerHand.pop();
+  playerHand.pop();
+  }
 }
