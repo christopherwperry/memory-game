@@ -118,9 +118,12 @@ h2 {
 .heart-wrapper {
   display: flex;
   flex-direction: row;
-  width: 100vw;
-  justify-content: center;
+  width: 80vw;
+  justify-content: flex-start;
   margin-bottom: 1vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  height: 5vh;
 }
 
 .heart {
@@ -142,12 +145,6 @@ h2 {
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
 }
 
-/*
-.flip-card {
-  transform: translate(100px) rotate(20deg);
-  transform-origin: 0 -250px;
-}*/
-
 .game-cards-hidden img {
   visibility: hidden;
   width: 14vw;
@@ -166,14 +163,6 @@ h2 {
   border-radius: 15%;
 }
 
-/* Easy Game Styline */
-
-#easy-game {
+#easy-game, #hard-game {
   background-color: #000000;
-}
-
-/* Hard Game Styline */
-
-#hard-game {
-  background-color: #293133;
 }

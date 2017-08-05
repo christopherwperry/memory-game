@@ -65,7 +65,7 @@ heartWrapper.setAttribute("id", "total-lives")
 gameContainer.appendChild(heartWrapper);
 
 function createHearts(){
-  for (let i = 0; i < 8; i++){
+  for (let i = 0; i < 16; i++){
     let heart = document.createElement("div");
     heart.setAttribute("class", "heart");
     heartWrapper.appendChild(heart);
@@ -84,12 +84,10 @@ function createCards(){
 
 let playerHand = [];
 let playerScore = 0;
-//let lives = document.getElementById("total-lives");
-//let life = document.getElementsByClassName(".heart");
+let lives = document.querySelector(".heart-wrapper");
 
-//console.log(lives);
-//console.log(life);
-//console.log(life.length);
+console.log(lives);
+console.log(lives.childNodes);
 
 function newGame(){
   createCards();
@@ -99,14 +97,13 @@ function newGame(){
 newGame();
 
 function checkLives(){
-  if(life.length > 0){
-    changeCards();
-  } else {
+  if(lives.childNodes === 0){
     alert("GAME OVER");
   }
 }
 
 function changeCards() {
+  checkLives();
   if (playerHand.length === 0){
     this.classList.remove("game-cards-hidden");
     this.classList.add("game-cards-shown");
@@ -119,15 +116,19 @@ function changeCards() {
   }
   console.log(playerHand);
   console.log(playerScore);
+  console.log(lives.childNodes);
 }
 
 let clearCards = function(){
   if (playerHand[0].innerHTML === playerHand[1].innerHTML){
     playerScore +=2;
+    playerHand[0].removeEventListener("click", changeCards, false);
+    playerHand[1].removeEventListener("click", changeCards, false);
     playerHand.pop();
     playerHand.pop();
     console.log(playerScore);
-} else {
+  } else {
+  lives.removeChild(lives.childNodes[0]);
   playerHand[0].classList.remove("game-cards-shown");
   playerHand[0].classList.add("game-cards-hidden");
   playerHand[1].classList.remove("game-cards-shown");
