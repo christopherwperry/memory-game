@@ -46,13 +46,12 @@ function shuffle(imageArray) {
   let i = 0;
   let j = 0;
   let temp = null;
-
   for (i = imageArray.length-1; i > 0; i -= 1) {
     j = Math.floor(Math.random()*(i + 1));
     temp = imageArray[i];
     imageArray[i] = imageArray[j];
     imageArray[j] = temp;
-  }
+    }
   return imageArray;
 }
 
@@ -85,9 +84,14 @@ function createCards(){
 let playerHand = [];
 let playerScore = 0;
 let lives = document.querySelector(".heart-wrapper");
+let game_board = document.getElementById("gameboard");
+let life = document.getElementsByClassName("heart")
 
 console.log(lives);
+console.log(life);
+console.log(life === 0);
 console.log(lives.childNodes);
+console.log(game_board);
 
 function newGame(){
   createCards();
@@ -96,14 +100,7 @@ function newGame(){
 
 newGame();
 
-function checkLives(){
-  if(lives.childNodes === 0){
-    alert("GAME OVER");
-  }
-}
-
 function changeCards() {
-  checkLives();
   if (playerHand.length === 0){
     this.classList.remove("game-cards-hidden");
     this.classList.add("game-cards-shown");
@@ -114,12 +111,9 @@ function changeCards() {
     playerHand.push(this);
     setTimeout(clearCards, 500);
   }
-  console.log(playerHand);
-  console.log(playerScore);
-  console.log(lives.childNodes);
 }
 
-let clearCards = function(){
+function clearCards(){
   if (playerHand[0].innerHTML === playerHand[1].innerHTML){
     playerScore +=2;
     playerHand[0].removeEventListener("click", changeCards, false);
@@ -128,12 +122,24 @@ let clearCards = function(){
     playerHand.pop();
     console.log(playerScore);
   } else {
-  lives.removeChild(lives.childNodes[0]);
-  playerHand[0].classList.remove("game-cards-shown");
-  playerHand[0].classList.add("game-cards-hidden");
-  playerHand[1].classList.remove("game-cards-shown");
-  playerHand[1].classList.add("game-cards-hidden");
-  playerHand.pop();
-  playerHand.pop();
+    if (life === 1){
+      gameLoss();
+    } else {
+      lives.removeChild(lives.childNodes[0]);
+      playerHand[0].classList.remove("game-cards-shown");
+      playerHand[0].classList.add("game-cards-hidden");
+      playerHand[1].classList.remove("game-cards-shown");
+      playerHand[1].classList.add("game-cards-hidden");
+      playerHand.pop();
+      playerHand.pop();
+    }
   }
+}
+
+function gameLoss() {
+  gameContainer.removeChild(game_board);
+  gameContainer.removeChild(heartWrapper);
+  let loss_screen = document.createElement("div");
+  loss_screen.setAttribute("id", "loss-screen");
+  gameContainer.appendChild(loss_screen);
 }

@@ -166,3 +166,13 @@ h2 {
 #easy-game, #hard-game {
   background-color: #000000;
 }
+
+#loss-screen {
+  width: 70vw;
+  height: 70vh;
+  margin-right: 15vw;
+  margin-left: 15vw;
+  margin-top: 3vh;
+  background-image: url("images/nickyoung.jpg");
+  background-repeat: no-repeat;
+}
