@@ -113,6 +113,7 @@ h2 {
   padding-top: 2vh;
   margin-left: 9vw;
   margin-right: 10vw;
+  cursor: pointer;
 }
 
 .heart-wrapper {
@@ -134,7 +135,7 @@ h2 {
   background-repeat: no-repeat;
 }
 
-.game-cards-hidden, .game-cards-shown {
+.game-cards-hidden {
   width: 14vw;
   height: 13vh;
   padding: 2px;
@@ -143,6 +144,30 @@ h2 {
   margin: 2px;
   border-radius: 15%;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+.game-cards-shown{
+  width: 14vw;
+  height: 13vh;
+  padding: 2px;
+  position: relative;
+  background-color: #293133;
+  margin: 2px;
+  border-radius: 15%;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
 }
 
 .game-cards-hidden img {
@@ -150,10 +175,6 @@ h2 {
   width: 14vw;
   height: 13vh;
   border-radius: 15%;
-}
-
-.game-cards-shown {
-  transition: 1s ease-out;
 }
 
 .game-cards-shown img {

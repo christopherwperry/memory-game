@@ -66,21 +66,17 @@ function createCards(){
   for(let i = 0; i < shuffledArray.length; i++){
     let cardCase = document.createElement("div");
     cardCase.setAttribute("class", "game-cards-hidden");
-    cardCase.addEventListener("click", changeCards, false);
+    cardCase.addEventListener("click", changeCards, true);
     cardCase.appendChild(shuffledArray[i]);
     gameBoard.appendChild(cardCase);
   }
 }
 
+createCards();
+
 let playerHand = [];
 let playerScore = 0;
 let game_board = document.getElementById("gameboard");
-
-function newGame(){
-  createCards();
-}
-
-newGame();
 
 function changeCards() {
   if (playerHand.length === 0){
@@ -91,7 +87,7 @@ function changeCards() {
     this.classList.remove("game-cards-hidden");
     this.classList.add("game-cards-shown");
     playerHand.push(this);
-    setTimeout(clearCards, 500);
+    setTimeout(clearCards, 1000);
   }
 }
 

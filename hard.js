@@ -81,22 +81,12 @@ function createCards(){
   }
 }
 
+console.log(Date());
+
 let playerHand = [];
 let playerScore = 0;
 let lives = document.querySelector("div.heart-wrapper");
 let game_board = document.getElementById("gameboard");
-
-//var nodesArray = Array.prototype.slice.call(each_heart);
-//console.log(nodesArray);
-
-/*
-var myNodeList = document.getElementsByClassName("heart");
-var myArray = []; // empty Array
-for (var i = 0; i < myNodeList.length; i++) {
-    var self = myNodeList[i];
-    myArray.push(self);
-}
-console.log(myArray);*/
 
 function newGame(){
   createCards();
