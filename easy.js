@@ -113,10 +113,22 @@ function clearCards(){
     }
   }
 
-function gameVictory() {
+//function gameVictory() {
   gameContainer.removeChild(game_board);
   gameContainer.removeChild(heartWrapper);
   let win_screen = document.createElement("div");
+  let win_message = document.createElement("div");
+  win_message.setAttribute("class", "message");
+  let win_button = document.createElement("a");
+  let button_text = document.createTextNode("Back To Main Menu");
+  let message_text = document.createTextNode("Winner! Winner!!")
+  win_button.setAttribute("id", "win_button");
+  win_button.setAttribute("class", "menu_button");
+  win_button.setAttribute("href", "index.html");
   win_screen.setAttribute("id", "win-screen");
+  win_message.appendChild(message_text);
+  win_button.appendChild(button_text);
+  gameContainer.appendChild(win_message);
   gameContainer.appendChild(win_screen);
-}
+  gameContainer.appendChild(win_button);
+//}

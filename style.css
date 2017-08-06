@@ -189,23 +189,54 @@ h2 {
 }
 
 #loss-screen {
-  width: 70vw;
-  height: 67vh;
-  margin-right: 15vw;
-  margin-left: 15vw;
-  margin-top: 3vh;
+  width: 80vw;
+  height: 60vh;
+  margin-right: 10vw;
+  margin-left: 10vw;
+  margin-top: 0vh;
+  margin-bottom: 0vh;
   background-image: url("images/nickyoung.jpg");
   background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 #win-screen {
   width: 70vw;
-  height: 64vh;
+  height: 60vh;
   margin-right: 15vw;
   margin-left: 15vw;
-  margin-top: 2vh;
-  margin-bottom: 4vh;
+  margin-top: 0vh;
+  margin-bottom: 0vh;
   background-image: url("images/reece.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
+}
+
+#win_button {
+  width: 30vw;
+  margin-right: 35vw;
+  margin-left: 35vw;
+  height: auto;
+  background-color: #293133;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-family: "Courier New", Courier;
+  padding: 5px;
+  font-size: 24px;
+  border: solid 1px #000000;
+  text-align: center;
+}
+
+.message {
+  width: 40vw;
+  margin-left: 30vw;
+  margin-right: 30vw;
+  height: auto;
+  background-color: #293133;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-family: "Courier New", Courier;
+  padding: 5px;
+  font-size: 24px;
+  text-align: center;
 }
