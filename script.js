@@ -42,7 +42,7 @@ imageArray[18].src = "images/mjcrying.jpg";
 imageArray[19] = new Image ();
 imageArray[19].src = "images/mjcrying.jpg";
 
-function shuffle(imageArray) {
+function shuffle() {
   let i = 0;
   let j = 0;
   let temp = null;
@@ -60,13 +60,13 @@ let gameContainer = document.getElementById("game-container");
 let gameBoard = document.getElementById("gameboard");
 let heartWrapper = document.createElement("div");
 heartWrapper.setAttribute("class", "heart-wrapper");
-heartWrapper.setAttribute("id", "total-lives")
 gameContainer.appendChild(heartWrapper);
 
 function createHearts(){
-  for (let i = 0; i < 16; i++){
+  for (let i = 0; i < 12; i++){
     let heart = document.createElement("div");
     heart.setAttribute("class", "heart");
+    heart.setAttribute("id", "heart");
     heartWrapper.appendChild(heart);
   }
 }
@@ -83,15 +83,28 @@ function createCards(){
 
 let playerHand = [];
 let playerScore = 0;
-let lives = document.querySelector(".heart-wrapper");
+let lives = document.querySelector("div.heart-wrapper");
 let game_board = document.getElementById("gameboard");
-let life = document.getElementsByClassName("heart")
+let each_heart = total_lives.childNodes;
+let lives_count = document.getElementById("total_lives").childElementCount;
 
-console.log(lives);
-console.log(life);
-console.log(life === 0);
-console.log(lives.childNodes);
-console.log(game_board);
+var c = document.getElementById("total_lives").childNodes.length;
+
+console.log(c);
+console.log(lives_count);
+console.log(each_heart);
+
+//var nodesArray = Array.prototype.slice.call(each_heart);
+//console.log(nodesArray);
+
+/*
+var myNodeList = document.getElementsByClassName("heart");
+var myArray = []; // empty Array
+for (var i = 0; i < myNodeList.length; i++) {
+    var self = myNodeList[i];
+    myArray.push(self);
+}
+console.log(myArray);*/
 
 function newGame(){
   createCards();
@@ -116,15 +129,17 @@ function changeCards() {
 function clearCards(){
   if (playerHand[0].innerHTML === playerHand[1].innerHTML){
     playerScore +=2;
+    if (playerScore === 20) {
+      setTimeout(gameVictory, 250);
+    } else {
     playerHand[0].removeEventListener("click", changeCards, false);
     playerHand[1].removeEventListener("click", changeCards, false);
     playerHand.pop();
     playerHand.pop();
     console.log(playerScore);
+    }
   } else {
-    if (life === 1){
-      gameLoss();
-    } else {
+    if (document.getElementsByClassName("heart")){
       lives.removeChild(lives.childNodes[0]);
       playerHand[0].classList.remove("game-cards-shown");
       playerHand[0].classList.add("game-cards-hidden");
@@ -132,6 +147,8 @@ function clearCards(){
       playerHand[1].classList.add("game-cards-hidden");
       playerHand.pop();
       playerHand.pop();
+    } else {
+      gameLoss();
     }
   }
 }
@@ -142,4 +159,12 @@ function gameLoss() {
   let loss_screen = document.createElement("div");
   loss_screen.setAttribute("id", "loss-screen");
   gameContainer.appendChild(loss_screen);
+}
+
+function gameVictory() {
+  gameContainer.removeChild(game_board);
+  gameContainer.removeChild(heartWrapper);
+  let win_screen = document.createElement("div");
+  win_screen.setAttribute("id", "win-screen");
+  gameContainer.appendChild(win_screen);
 }

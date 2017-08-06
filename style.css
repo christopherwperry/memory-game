@@ -121,8 +121,8 @@ h2 {
   width: 80vw;
   justify-content: flex-start;
   margin-bottom: 1vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 19vw;
+  margin-right: 20vw;
   height: 5vh;
 }
 
@@ -169,10 +169,22 @@ h2 {
 
 #loss-screen {
   width: 70vw;
-  height: 70vh;
+  height: 67vh;
   margin-right: 15vw;
   margin-left: 15vw;
   margin-top: 3vh;
   background-image: url("images/nickyoung.jpg");
   background-repeat: no-repeat;
+}
+
+#win-screen {
+  width: 70vw;
+  height: 64vh;
+  margin-right: 15vw;
+  margin-left: 15vw;
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+  background-image: url("images/reece.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
